@@ -1,23 +1,50 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    redirect: "/home"
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  { // 首页
+    path: "/home",
+    component: () => import("views/home/Home"),
+    meta: {
+      // 用于控制tabBar是否可见
+      footShow: true
+    }
+  },
+  { // 详情页(动态路由)
+    path: "/detail/:iid",
+    component: () => import("views/detail/Detail"),
+    meta: {
+      footShow: false
+    }
+  },
+  { // 分类
+    path: "/category",
+    component: () => import("views/category/Category"),
+    meta: {
+      footShow: true
+    }
+  },
+  { // 购物车
+    path: "/cart",
+    component: () => import("views/cart/Cart"),
+    meta: {
+      footShow: true
+    }
+  },
+  { // 我的
+    path: "/profile",
+    component: () => import("views/profile/Profile"),
+    meta: {
+      footShow: true
+    }
+  },
 ]
 
 const router = createRouter({
+  // mode: 'history'
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
