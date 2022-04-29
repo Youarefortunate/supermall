@@ -162,7 +162,10 @@
                 // })
                 // 使用map映射action里面的异步函数addCart
                 this.addCart(product).then(res => {
-                    this.$toast.show(res)
+                    this.$loading.showLoading();
+                    setTimeout(() => {
+                        this.$toast.show(res)
+                    }, 1000) 
                 })
             }
         },

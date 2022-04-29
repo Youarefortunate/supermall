@@ -22,8 +22,6 @@
                     this.isShow = false,
                     this.message = ''
                 }, duration)
-                console.log(this.isShow);
-                console.log(this.message);
             }
         }
     }

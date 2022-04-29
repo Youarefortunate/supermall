@@ -5,6 +5,7 @@ import store from './store' // vuex
 
 import FastClick from 'fastclick'
 import toast from 'components/common/toast'
+import loading from 'components/common/loading'
 import mitt from 'mitt'
 let app = createApp(App)
 
@@ -18,5 +19,6 @@ FastClick.attach(document.body);
 app.use(store)
     .use(router)
     .use(toast)
+    .use(loading)
     .mount('#app')
 

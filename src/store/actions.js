@@ -7,13 +7,13 @@ export default {
             // oldProduct里面有值就说明添加了同一件商品,这时时里面count加1
             if (oldProduct) {
                 context.commit('addCounter', oldProduct);
-                resolve("商品数量加1");
+                resolve("商品数量加一");
             } else {
                 // 否则就是添加了其他商品,这时我们往这个商品里面添加一个属性count(默认值为1)
                 payload.count = 1;
                 // 并将该商品添加到cartList里面
                 context.commit('addToCart', payload);
-                resolve("该商品数量加1");
+                resolve("添加到购物车成功"); 
             }
             // let oldProduct = null;
             // for(let item of state.cartList) {

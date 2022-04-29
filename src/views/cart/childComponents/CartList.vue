@@ -32,7 +32,7 @@
 <style scoped>
     .cart-list {
         height: 100vh;
-        
+        background-color: rgb(249, 249, 249);
     }
     .content {
         overflow: hidden;

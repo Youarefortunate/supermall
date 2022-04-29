@@ -16,3 +16,14 @@ export function getCategoryContent(maitKey) {
         }
     })
 }
+
+// tabControl下面的商品列表展示
+export function getCategoryDetail(miniWallkey, type) {
+    return request({
+        url: '/subcategory/detail',
+        params: {
+            miniWallkey,
+            type
+        }
+    })
+}

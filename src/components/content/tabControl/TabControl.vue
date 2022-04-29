@@ -13,21 +13,28 @@
         props: {
             titles: {
                 type: Array,
-                default() {
-                    return []
-                }
+                default: () => []
             }
         },
         data() {
             return {
-                currentIndex: 0
+                currentIndex: 0, 
+                tabType: 'pop'
             }
         },
         methods: {
             itemClick(index) {
                 this.currentIndex = index;
-                // 子组件发送事件传递到父组件中并携带参数
-                this.$emit('tabClick',index);
+                const currentTitle = this.titles[this.currentIndex];
+                if(currentTitle == '综合') {
+                    this.tabType = 'pop'
+                } else if(currentTitle == '新品') {
+                    this.tabType = 'new'
+                } else {
+                    this.tabType = 'sell'
+                }
+                // 子组件发送事件传递到父组件中并携带多个参数
+                this.$emit('tabClick',index, this.tabType);
             }
         }
     }

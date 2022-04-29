@@ -19,14 +19,13 @@
         props: {
             goodsItem: {
                 type: Object,
-                default() {
-                    return {}
-                }
+                default: () => {} 
             }
         },
         computed: {
             showImages() {
-                return this.goodsItem.image || this.goodsItem.show.img
+                // 注意这里this.goodsItem.img一定要放在第一位
+                return this.goodsItem.img || this.goodsItem.image || this.goodsItem.show.img;
             }
         },
         methods: {

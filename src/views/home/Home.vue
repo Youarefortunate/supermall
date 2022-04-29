@@ -142,6 +142,7 @@
             },
             // 接收子组件发射出来的事件并响应
             tabClick(index) {
+                this.$loading.showLoading(200);
                 // console.log(index);
                 // 根据点击的tab的index给currentType赋值一个字符串
                 switch(index) {
@@ -149,7 +150,7 @@
                     case 1: this.currentType = 'new'; break;
                     case 2: this.currentType = 'sell'; break;
                 }
-
+                
                 this.$refs.tabControl1.currentIndex = index;
                 this.$refs.tabControl2.currentIndex = index;
             },

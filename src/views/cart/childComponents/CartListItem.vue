@@ -53,7 +53,9 @@
         display: flex;
         font-size: 0;
         padding: 5px;
-        border-bottom: 1px solid #ccc;
+        background-color: #fff;
+        margin-top: 10px;
+        border-radius: 10px;
     }
 
     .item-selector {
@@ -72,14 +74,15 @@
     .item-img {
         padding: 5px;
         /*border: 1px solid #ccc;*/
-        height: 130px;
+        
     }
 
     .item-img img {
-        width: 80px;
-        height: 100%;
+        width: 100px;
+        height: 130px;
         display: block;
         border-radius: 5px;
+        object-fit: cover; 
     }
 
     .item-info {

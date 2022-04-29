@@ -5,11 +5,11 @@
                     class="check-all" 
                     :isCheck="isSelectAll" 
                     @click="checkClick"/>
-            <span>全选</span>
+            <span style="font-size: 14px">全选</span>
         </div>
 
         <div class="totalPrice">
-            合计:{{totalPrice}}
+            合计: {{totalPrice}}
         </div>
 
         <div class="calculate" @click="calcClick">去计算({{checkLength}})</div>
@@ -55,7 +55,7 @@
 <style scoped>
     .bottom-bar {
         width: 100%;
-        height: 40px;
+        height: 60px;
         background-color: #eee;
         position: absolute;
         left: 0;
@@ -71,22 +71,28 @@
         margin-left: 10px;
     }
     .check-all {
-        width: 22px;
-        height: 22px;
+        width: 17px;
+        height: 17px;
         margin-right: 5px;
     }
 
     .totalPrice {
+        font-size: 14px;
         margin-left: 20px;
     }
     .calculate {
         color: #fff;
         margin-right: 10px;
         width: 100px;
-        height: 100%;
+        height: 40px;
+        border-radius: 30px;
+        font-size: 13px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: red;
+        /* background-image: linear-gradient(45deg, #29bdd9 0%, #276ace 100%); */
+        background-image: linear-gradient(45deg, #ff9569 0%, #e92758 100%);
+        /* background-image: linear-gradient(45deg, #C6FFDD 0%, #FBD786 50%, #f7797d 100%); */
+        /* background-image: linear-gradient(45deg, #f12711 0%, #f5af19 100%); */
     }
 </style>
